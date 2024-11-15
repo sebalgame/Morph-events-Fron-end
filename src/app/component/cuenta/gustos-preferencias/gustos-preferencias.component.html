@@ -1,0 +1,75 @@
+<header>
+    <div class="logo">
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+    </div>
+    <div class="icons">
+        <a [routerLink]="['/cuenta/bievenidos']"><img src="Images/icon-flecha.png" class="icon-flecha" alt="Atras"></a>
+    </div>
+</header>
+
+<div class="titulo-gustos">
+    <h1><strong>Gustos y preferencias</strong></h1>
+</div>
+
+<div class="categorias-container">
+    <div class="categoria">
+        <h2>Música</h2>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Cumbia')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Cumbia')}">Cumbia</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Rock')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Rock')}">Rock</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Electrónica')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Electrónica')}">Electrónica</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Reguetón')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Reguetón')}">Reguetón</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Salsa')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Salsa')}">Salsa</button>
+    </div>
+
+    <div class="categoria">
+        <h2>Entretenimiento</h2>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Teatro')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Teatro')}">Teatro</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Circo')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Circo')}">Circo</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Cine al aire libre')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Cine al aire libre')}">Cine al aire libre</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Magia')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Magia')}">Magia</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Conciertos acústicos')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Conciertos acústicos')}">Conciertos acústicos</button>
+    </div>
+
+    <div class="categoria">
+        <h2>Cultura</h2>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Exposiciones de arte')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Exposiciones de arte')}">Exposiciones de arte</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Festivales culturales')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Festivales culturales')}">Festivales culturales</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Museos')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Museos')}">Museos</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Conferencias literarias')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Conferencias literarias')}">Conferencias literarias</button>
+        <button class="categoria-boton" 
+                (click)="seleccionarCategoria('Ferias de artesanía')" 
+                [ngClass]="{'activo': categoriasSeleccionadas.includes('Ferias de artesanía')}">Ferias de artesanía</button>
+    </div>
+</div>
+
+<div class="button-container">
+    <button class="guardar" (click)="guardarPreferencias()">Guardar</button>
+</div>

@@ -1,0 +1,169 @@
+<p>fav-events works!</p>
+<div class="header">
+    <div class="logo">
+    
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+
+    </div>
+
+    <div class="icons">
+
+        <img src="Images/icon-flecha.png" class="icon-flecha" alt="Atras">
+    
+    </div>
+
+</div>
+
+<div class="favEvents">
+    <div class="titulo-favEvents">
+        <h1><strong>Eventos favoritos</strong></h1>
+    </div>
+
+    
+    <div class="favEventos1">
+        
+        <div class="favEvent1">
+            <img src="Images/evento1.jpeg">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>APR</h5>
+                    <h1>14</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Lima Latin Pop Fest</strong></h5>
+                    <p>Concierto de música pop en Lima. Presentaciones de varios artistas destacados del género latino.</p>
+                </div>
+            </div>
+            
+        </div>
+        <section class="block1">
+            <mat-checkbox></mat-checkbox>
+        </section>
+        <div class="favEvent2">
+            <img src="Images/evento2.jpeg">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>AUG</h5>
+                    <h1>20</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Reggaeton Lima Festival 5 - Edición Halloween</strong></h5>
+                    <p>Festival que reúne a artistas del género en una edición especial de Halloween en Lima.</p>
+                </div>
+            </div>
+        </div>
+        <section class="block2">
+            <mat-checkbox></mat-checkbox>
+        </section>
+        <div class="favEvent3">
+            <img src="Images/evento3.jpeg">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>SEP</h5>
+                    <h1>18</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Ya Siéntese Señora - Teatro</strong></h5>
+                    <p>Una obra teatral en el Teatro Plaza Norte con un toque humorístico y dramático. ¡No te la puedes perder!</p>
+                </div>
+            </div>
+        </div>
+        <section class="block3">
+            <mat-checkbox></mat-checkbox>
+        </section>
+    </div>
+    <br><br>
+    <div class="favEventos1">
+        <div class="favEvent1">
+            <img src="Images/evento4.png">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>APR</h5>
+                    <h1>14</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Wonder Girls 2010 Wonder Girls World Tour Arequipa</strong></h5>
+                    <p>Concierto del grupo Wonder Girls en su gira mundial, presentado.</p>
+                </div>
+            </div>
+        </div>
+        <section class="block1">
+            <mat-checkbox></mat-checkbox>
+        </section>
+        <div class="favEvent2">
+            <img src="Images/evento5.jpeg">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>AUG</h5>
+                    <h1>20</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Concierto Pixar Sinfónico</strong></h5>
+                    <p>Un concierto sinfónico con música de las películas de Pixar, una experiencia única con banda sonora en vivo.</p>
+                </div>
+            </div>
+        </div>
+        <section class="block2">
+            <mat-checkbox></mat-checkbox>
+        </section>
+        <div class="favEvent3">
+            <img src="Images/evento6.jpeg">
+            <div class="arreglo">
+                <div class="fecha">
+                    <h5>SEP</h5>
+                    <h1>18</h1>
+                </div>
+                <div class="texto">
+                    <h5><strong>Teatro Plaza Norte - Amaranta</strong></h5>
+                    <p>Un espectáculo especial en el Teatro Plaza Norte con presentaciones llenas de música y arte.</p>
+                </div>
+            </div>
+        </div>
+        <section class="block3">
+            <mat-checkbox></mat-checkbox>
+        </section>
+    </div>
+</div>
+
+
+<div class="button-container">
+    <button class="eliminar">Eliminar evento</button>
+</div>
+
+<div class="filters">
+    <div class="filter">
+        <button class="dropdown-toggle" (click)="toggleDropdown('fechaDropdown')">Fecha</button>
+        <div class="dropdown-menu" *ngIf="showDropdown === 'fechaDropdown'">
+            <p (click)="selectFilter('Hoy')">Hoy</p>
+            <p (click)="selectFilter('Esta semana')">Esta semana</p>
+            <p (click)="selectFilter('Este mes')">Este mes</p>
+        </div>
+    </div>
+    
+    <div class="filter">
+        <button class="dropdown-toggle" (click)="toggleDropdown('tipoEventoDropdown')">Tipo de Evento</button>
+        <div class="dropdown-menu" *ngIf="showDropdown === 'tipoEventoDropdown'">
+            <p (click)="selectFilter('Conciertos')">Conciertos</p>
+            <p (click)="selectFilter('Teatro')">Teatro</p>
+            <p (click)="selectFilter('Festivales')">Festivales</p>
+        </div>
+    </div>
+
+    <div class="filter">
+        <button class="dropdown-toggle" (click)="toggleDropdown('promotorDropdown')">Promotor</button>
+        <div class="dropdown-menu" *ngIf="showDropdown === 'promotorDropdown'">
+            <p (click)="selectFilter('Promotor A')">Promotor A</p>
+            <p (click)="selectFilter('Promotor B')">Promotor B</p>
+            <p (click)="selectFilter('Promotor C')">Promotor C</p>
+        </div>
+    </div>
+
+    <div class="filter">
+        <button class="dropdown-toggle" (click)="toggleDropdown('ciudadDropdown')">Ciudad</button>
+        <div class="dropdown-menu" *ngIf="showDropdown === 'ciudadDropdown'">
+            <p (click)="selectFilter('Lima')">Lima</p>
+            <p (click)="selectFilter('Arequipa')">Arequipa</p>
+            <p (click)="selectFilter('Cusco')">Cusco</p>
+        </div>
+    </div>
+</div>

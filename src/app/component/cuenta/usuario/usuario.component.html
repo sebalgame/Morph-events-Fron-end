@@ -1,0 +1,50 @@
+<div class="header">
+    <div class="logo">
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+    </div>
+
+    <div class="icons">
+        <a [routerLink]="['/cuenta/bievenidos']"><img src="Images/felcha.png" class="icon-flecha" alt="Atras" ></a>
+        <img src="Images/burguer.png" class="icon-hamburguesa" (click)="toggleMenu()" alt="Menú">
+    </div>
+</div>
+
+<div *ngIf="menuOpen" class="hamburger-menu">
+    <p [routerLink]="['/cuenta/ver-perfil']" (click)="selectOption('Ver Perfil')">Ver Perfil</p>
+    <p [routerLink]="['/cuenta/actualizar-datos']" (click)="selectOption('Actualizar Datos')">Actualizar Datos</p>
+    <p (click)="selectOption('Eventos Favoritos')">Eventos Favoritos</p>
+    <p [routerLink]="['/cuenta/comentarios']" (click)="selectOption('Comentar')">Comentar</p>
+    <p [routerLink]="['/cuenta/transacciones']" (click)="selectOption('Transacciones')">Transacciones</p>
+    <p  [routerLink]="['/cuenta/entradas-compradas']" (click)="selectOption('Entradas Compradas')">Entradas Compradas</p>
+</div>
+<br><br><br><br><br><br><br><br>
+<div class="caja-general">
+    <div class="foto">
+        <img src="Images/prueba.png" alt="Foto de perfil" class="imagen-referencia">
+        <button class="registro">Subir foto</button>
+    </div>
+
+    <div class="biografia">
+        <h5>Biografía:</h5>
+        <textarea class="biografia-recuadro" required></textarea>
+        <button class="registro">Eliminar cuenta</button>
+    </div>
+
+    <div class="datos">
+        <label>Nombres:</label>
+        <input type="text" [(ngModel)]="client.firstName">
+        <label>Apellidos:</label>
+        <input type="text" [(ngModel)]="client.lastName">
+        <label>Género:</label>
+        <input type="text" [(ngModel)]="client.gender">
+        <label>Edad:</label>
+        <input type="number" [(ngModel)]="client.age">
+        <label>Número de teléfono:</label>
+        <input type="tel" [(ngModel)]="client.phone">
+        <label>DNI:</label>
+        <input type="number" [(ngModel)]="client.dni">
+        <button class="registro" (click)="saveChanges()">Guardar</button>
+    </div>
+    
+    
+</div>

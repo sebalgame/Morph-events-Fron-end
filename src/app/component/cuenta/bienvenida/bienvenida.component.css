@@ -1,0 +1,175 @@
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 43px;
+    background-color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 42%;
+    margin-top: 20px;
+}
+
+.Logo-header {
+    width: 290px;
+}
+
+.oracionH {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.icon-usuario{
+    position: absolute;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+
+.icon-hamburguesa{
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+
+}
+
+.hamburger-menu {
+    background-color: #1a1e36;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;/*para que no se mueva le puedo poner fixed ?*/
+    right: 20px;
+    top: 48px;
+    z-index: 1001;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.hamburger-menu p:hover {
+    background-color: #454d75;
+}
+
+
+.seccion1, .seccion2, .seccion3 {
+    position: relative;
+    background-image: linear-gradient(to left, rgba(238, 41, 133, 0.7), rgba(139, 1, 139, 0.7), rgba(61, 4, 58, 0.7)), url("../../../../../public/Images/gentefiesta-secciones.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 550px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    box-sizing: border-box;
+    width: 95%; 
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    top: 62px;
+    left: 40px;
+}
+
+.seccion1 img, .seccion2 img, .seccion3 img {
+    width: 500px; 
+    height: 30rem; 
+    border-radius: 20px;
+    margin-right: 20px;
+    position: relative;
+    left: 75rem; 
+}
+
+.text {
+    position:relative;
+    width: 50%; 
+    text-align: center;
+    color: white;
+    flex: 1;
+    margin-right: 30px;
+    right:500px;
+}
+
+.text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white; 
+}
+
+.text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.ingresar {
+    width: 200px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.ingresar:hover {
+    background-color: #E0146B; 
+}
+
+.ingresar a{
+    text-decoration: none;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.logout {
+    width: 200px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.logout:hover {
+    background-color: #a31653; 
+}

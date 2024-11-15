@@ -1,0 +1,285 @@
+<header id="Header" >
+
+    <div class="Cabecera">
+        <a href="#firstposition"><img src="Images/LOGO.png" class="Logo-header"></a>
+        <ul class="main-menu">
+            <li class="menu-item"><a href="#nosotros">Nosotros</a></li>
+            <li class="menu-item"><a href="#eventos">Servicios</a></li>
+            <li class="menu-item"><a href="#comunidad">Comunidad</a></li>
+            <li class="menu-item"><a href="#contactanos">Contacto</a></li>
+            <li class="special-button"><a routerLink="inicio-sesion/loguearse" >Iniciar sesion</a></li>
+        </ul>
+    </div>
+
+    <div class="seccion-landing">
+        
+        <div class="imagen2">
+            <img src="Images/fiestera.png" alt="Imagen Fiestera" class="Header-Image">
+        </div>
+
+        <div class="texto2">
+            <h2 class="oracion"><span id="titulo"></span></h2> 
+        
+            <p class="descripcion"><span id="descripcion"></span></p>
+            
+            <button class="registro"><a routerLink="inicio-sesion/loguearse" >Iniciar sesion</a></button>
+        </div>
+    
+        
+
+    </div>
+
+</header>
+
+<div class="buscador">
+    <form action="" method="post" id="form" data-tipo="registro" class="contenedor-buscador">
+        <div class="Buscar-evento buscar-item">
+            <h5>Buscar evento</h5>
+            <input type="text" required id="evento">
+        </div>
+        <div class="Lugar buscar-item">
+            <h5>Lugar</h5>
+            <input type="text" required id="Lugar">
+        </div>
+        <div class="Horario buscar-item">
+            <h5>Horario</h5>
+            <input type="text" id="horario" [value]="selectedDay" (click)="toggleDropdown()" readonly>
+            <div *ngIf="showDropdown" class="dropdown">
+                <p *ngFor="let day of daysOfWeek" (click)="selectDay(day)">{{ day }}</p>
+            </div>
+        </div>
+    </form>
+</div>
+<br><br><br>
+
+<div>
+
+    <div class="descripcion" id="nosotros">
+        <h1 class="titulo"><strong>Nosotros</strong></h1>
+        <p>Conoce quiénes forman parte de este increible proyecto</p>
+    </div>
+    <br><br><br>
+    <div class="explicacion" id="nosotross">
+        <h3 class="pregunta">¿Quiénes somos?</h3>
+        <h5 class="parrafo">Somos una organización creadora de eventos, donde según las especificaciones o requerimientos del usuario le damos posibles alternativas de como quisiera su fiesta y así darle la mejor experiencia.</h5>
+        <h3 class="pregunta">Misión</h3>
+        <h5 class="parrafo">Ser la empresa enfocada en brindar ideas innovadoras y únicas para garantizar la satisfacción de nuestros clientes.</h5>
+        <h3 class="pregunta">Visión</h3>
+        <h5 class="parrafo">Convertirse en una empresa prestigiosa y reconocida a nivel nacional, el cual genere un alto valor agregado.</h5>
+    </div>
+    <br><br><br>
+
+    <div class="eventos" id="eventos">
+        <br><br>
+        <div class="titulo-eventos">
+            <h1 class="titulo"><strong>Algunos eventos de tu interés</strong></h1>
+            <p>En Morph Events, nos preocupamos por tus reuniones, por lo que disponemos de estos servicios, especialmente creado para ti.</p>
+        </div>
+        <br><br>
+        <div class="eventos-fiestas">
+            <div class="evento1">
+                <img src="Images/evento1.jpg" alt="" class="img-evento1">
+                <br><br>
+                <h5 class="titulo-evento"><strong>Viernes de Juergón</strong></h5>
+                <br>
+                <h5 class="titulo-evento">Jueves 26 sep. - 9:00 pm</h5>
+                <div class="evento-venta">
+                    <h5 class="letra1">Desde&nbsp;&nbsp;</h5>
+                    <h5 class="precio">s/ 180.00</h5>
+                    <button class="comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="evento2">
+                <img src="Images/evento2.jpg" alt="" class="img-evento2">
+                <br><br>
+                <h5 class="titulo-evento"><strong>Viernes de Juergón</strong></h5>
+                <br>
+                <h5 class="titulo-evento">Sábado 31 oct. - 10.00 pm</h5>
+                <div class="evento-venta">
+                    <h5 class="letra1">Desde&nbsp;&nbsp;</h5>
+                    <h5 class="precio">s/ 55.00</h5>
+                    <button class="comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="evento3">
+                <img src="Images/evento3.jpg" alt="" class="img-evento3">
+                <br><br>
+                <h5 class="titulo-evento"><strong>Viernes de Juergón</strong></h5>
+                <br>
+                <h5 class="titulo-evento">Viernes 18 oct. - 8:00 pm</h5>
+                <div class="evento-venta">
+                    <h5 class="letra1">Desde&nbsp;&nbsp;</h5>
+                    <h5 class="precio">s/ 101.00</h5>
+                    <button class="comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comunidad" id="comunidad">
+        <div class="titulo-comunidad">
+            <h1 class="titulo"><strong>Comunidad</strong></h1>
+            <p>Tenemos muchos aliados que hacen posible la organización del evento como por ejemplo las siguientes organizaciones</p>
+        </div>
+
+        <div class="eventos-comunidad1">
+            <div class="comunidad1">
+                <img src="Images/comunidad1.jpg" alt="" class="comunidad-img1">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>APR</h5>
+                        <h1>14</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>Uno de los Dj’s más reconocidos del Perú</strong></h5>
+                        <p>Prepárate para una noche inolvidable con música de uno de los DJs más influyentes de Perú.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comunidad2">
+                <img src="Images/comunidad2.jpg" alt="" class="comunidad-img2">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>AUG</h5>
+                        <h1>20</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>Noche Exclusiva en Lima Bar</strong></h5>
+                        <p>Disfruta de buena música, buenos tragos y la mejor compañía en Lima Bar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comunidad3">
+                <img src="Images/comunidad3.png" alt="" class="comunidad-img3">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>SEP</h5>
+                        <h1>18</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>La Zona: Noche Exclusiva de Música en Vivo</strong></h5>
+                        <p>Prepárate para una noche inolvidable con música de uno de los DJs más influyentes de Perú.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="eventos-comunidad1">
+            <div class="comunidad1">
+                <img src="Images/comunidad4.jpg" alt="" class="comunidad-img1">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>OCT</h5>
+                        <h1>5</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>La Casa de la Salsa: Vive una Noche Única de Ritmo y Pasión</strong></h5>
+                        <p>Sumérgete en el auténtico ambiente salsero y vive una experiencia llena de pasión y buena vibra.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comunidad2">
+                <img src="Images/comunidad 5.jpg" alt="" class="comunidad-img2">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>NOV</h5>
+                        <h1>12</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>Mrs Tommy: Organizador de eventos</strong></h5>
+                        <p>Disfruta de una noche mágica con luces, sonido y una atmósfera única. Compra tu entrada ahora.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comunidad3">
+                <img src="Images/comunidad6.jpg" alt="" class="comunidad-img3">
+                <div class="arreglo">
+                    <div class="fecha">
+                        <h5>DEC</h5>
+                        <h1>22</h1>
+                    </div>
+                    <div class="texto">
+                        <h5><strong>Unixx Events</strong></h5>
+                        <p>No te pierdas esta oportunidad única. Reserva tu lugar para disfrutar de una noche llena de emoción y energía.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="contactanos" id="contactanos">
+            <br><br>
+            <div class="titulo-footer"><h2><strong>Contáctanos</strong></h2></div>
+            <div class="contactanos-division">
+                <div class="imagen-footer">
+                    <img src="Images/imagenreferencial.png" alt="" class="footer1">
+                </div>
+                <div class="telefono">
+                    <img src="Images/logofono.png" alt="" class="footer2">
+                    <div class="datos">
+                        <h5>Cel: +51 970 589 866</h5>
+                        <h5>Lunes - Viernes (8:00 am - 7:00 pm)</h5>
+                    </div>
+                </div>
+                <div class="correo">
+                    <img src="Images/logocorreo.png" alt="" class="footer3">
+                    <div class="datos">
+                        <h5>Morpheventsoutlook.com</h5>
+                        <h5>Web: www.morphevents.com.pe</h5>
+                    </div>
+                </div>
+                <div class="ubicacion">
+                    <img src="Images/logodireccion.png" alt="" class="footer4">
+                    <div class="datos">
+                        <h5>Juan Valdez 1204</h5>
+                        <h5>San Isidro - Lima, Perú</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="derechos">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h3>MORPH EVENTS</h3>
+                    <p>
+                        Morph Events es una plataforma global de auto-servicio para la venta de entradas,
+                        diseñada para crear, compartir y descubrir eventos que enciendan tu pasión y transformen tus experiencias.
+                    </p>
+                </div>
+                <div class="footer-box">
+                    <h3>Planificar Eventos</h3>
+                    <ul>
+                        <li>Crea y Organiza tu Evento</li>
+                        <li>Vende Entradas Fácilmente</li>
+                        <li>Confirmación Online (RSVP)</li>
+                        <li>Eventos Virtuales e Híbridos</li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Morph Events</h3>
+                    <ul>
+                        <li>Quiénes Somos</li>
+                        <li>Prensa</li>
+                        <li>Contáctanos</li>
+                        <li>Centro de Ayuda</li>
+                        <li>Cómo Funciona</li>
+                        <li>Política de Privacidad</li>
+                        <li>Términos y Condiciones</li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Mantente Informado</h3>
+                    <p>
+                        Suscríbete a nuestro boletín para estar al día con los últimos eventos y conciertos. ¡No te pierdas nada!
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email address.." class="footer-input">
+                        <button class="footer-button">Suscríbete Ahora</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 Morph Events</p>
+            </div>
+        </div>
+    </footer>
+</div>

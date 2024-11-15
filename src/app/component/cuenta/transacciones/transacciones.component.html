@@ -1,0 +1,50 @@
+<p>transacciones works!</p>
+<div class="header">
+    <div class="logo">
+    
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+
+    </div>
+
+    <div class="icons">
+
+        <img [routerLink]="['/cuenta/bievenidos']" src="Images/icon-flecha.png" class="icon-flecha" alt="Atras">
+    
+    </div>
+
+</div>
+
+
+<div class="titulo-Transacciones">
+    <h1><strong>Transacciones realizadas</strong></h1>
+</div>
+<br>
+
+
+<mat-paginator [length]="8" [pageSizeOptions]="[4, 7, 10]" showFirstLastButtons aria-label="Select page"></mat-paginator>
+
+<table mat-table [dataSource]="dsTransactions" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Código de Transacción </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha Transacción </th>
+      <td mat-cell *matCellDef="let element"> {{ element.date }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="monto">
+      <th mat-header-cell *matHeaderCellDef> Monto </th>
+      <td mat-cell *matCellDef="let element"> {{ element.amount }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let element"> {{ element.quantity }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

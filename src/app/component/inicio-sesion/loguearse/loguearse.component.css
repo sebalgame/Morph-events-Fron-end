@@ -1,0 +1,105 @@
+.login-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background: url('../../../../../public/Images/fondo-login.png') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+}
+
+.login-box {
+    position: absolute;
+    left: 200px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px 100px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #dcdcdc;
+    outline: none;
+    font-size: 16px;
+}
+
+.forgot-password {
+    color: #ff4081;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.login-btn, .register-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-btn a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.login-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+.register-btn {
+    background-color: #f5167e;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.login-btn:hover {
+    background: linear-gradient(to right, #f8bc22 0%, #ff4081 100%);
+    transform: scale(1.05);
+}
+
+.register-btn:hover {
+    background: linear-gradient(to right, #f8bc22 0%, #f5167e 100%);
+    transform: scale(1.05);
+}
+
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px dashed #dcdcdc;
+    text-align: center;
+}
+
+.morph-events-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.morph-logo {
+    position: absolute;
+    right: 10px;
+    width: 800px;
+    max-width: 100%;
+    animation: slide-in 1s ease-in-out;
+}

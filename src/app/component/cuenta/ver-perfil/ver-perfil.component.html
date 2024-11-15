@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="logo">
+    
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+
+    </div>
+
+    <div class="icons">
+
+        <img [routerLink]="['/cuenta/bievenidos']" src="Images/icon-flecha.png" class="icon-flecha" alt="Atras">
+        <img src="Images/icon-hamburguesa.png" class="icon-hamburguesa" (click)="toggleMenu()" alt="Menú">
+    
+    </div>
+
+</div>
+
+<div *ngIf="menuOpen" class="hamburger-menu">
+    <p (click)="selectOption('Ver Perfil')">Ver Perfil</p>
+    <p (click)="selectOption('Actualizar Datos')">Actualizar Datos</p>
+    <p (click)="selectOption('Eventos Favoritos')">Eventos Favoritos</p>
+    <p (click)="selectOption('Comentar')">Comentar</p>
+    <p (click)="selectOption('Transacciones')">Transacciones</p>
+    <p (click)="selectOption('Entradas Compradas')">Entradas Compradas</p>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="caja-izquierda">
+        <div class="foto">
+          <img src="Images/prueba.png" alt="Foto de perfil" class="imagen-referencia">
+          <label class="nombre-apellido">{{ firstName }} {{ lastName }}</label>
+     </div>
+
+     <div class="biografia">
+         <h5>Biografía:</h5>
+         <textarea class="biografia-recuadro">{{ biografia }}</textarea>
+        </div>
+
+        <div class="preferencias">
+            <h5>Gustos y Preferencias:</h5>
+            <ul>
+              <li *ngFor="let categoria of categoriasSeleccionadas">{{ categoria }}</li>
+            </ul>
+          </div>
+    </div>
+
+
+</div>

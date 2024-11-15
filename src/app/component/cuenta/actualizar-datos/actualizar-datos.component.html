@@ -1,0 +1,86 @@
+<div class="header">
+    <div class="logo">
+    
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+
+    </div>
+
+    <div class="icons">
+
+        <img [routerLink]="['/cuenta/bievenidos']" src="Images/icon-flecha.png" class="icon-flecha" alt="Atras">
+        <img src="Images/icon-hamburguesa.png" class="icon-hamburguesa" (click)="toggleMenu()" alt="Menú">
+    
+    </div>
+
+</div>
+
+<div *ngIf="menuOpen" class="hamburger-menu">
+    <p [routerLink]="['']" (click)="selectOption('Ver Perfil')">Ver Perfil</p>
+    <p [routerLink]="['/cuenta/actualizar-datos']" (click)="selectOption('Actualizar Datos')">Actualizar Datos</p>
+    <p (click)="selectOption('Eventos Favoritos')">Eventos Favoritos</p>
+    <p [routerLink]="['/cuenta/comentarios']" (click)="selectOption('Comentar')">Comentar</p>
+    <p [routerLink]="['/cuenta/transacciones']" (click)="selectOption('Transacciones')">Transacciones</p>
+    <p  [routerLink]="['/cuenta/entradas-compradas']" (click)="selectOption('Entradas Compradas')">Entradas Compradas</p>
+</div>
+
+<br>
+<div class="container">
+    <div class="caja-izquierda">
+        <div class="foto">
+            <img src="Images/prueba.png" alt="Foto de perfil" class="imagen-referencia">
+            <button class="perfil">Cambiar foto</button>
+        </div>
+        <br>
+        <div class="biografia">
+            <h5>Biografía:</h5>
+            <textarea class="biografia-recuadro" [(ngModel)]="biografia" required></textarea>
+            <button class="perfil" (click)="saveBiografia()">Modificar</button>
+        </div>
+    </div>
+
+    <div class="caja-derecha">
+        <div class="columnas-datos">
+            <div class="columna">
+                <label>Nombres:</label>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="client.firstName" [readonly]="!editMode.firstName">
+                    <button class="editar" (click)="enableEdit('firstName')">Editar</button>
+                </div>
+
+                <label>Apellidos:</label>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="client.lastName" [readonly]="!editMode.lastName">
+                    <button class="editar" (click)="enableEdit('lastName')">Editar</button>
+                </div>
+
+                <label>Género:</label>
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="client.gender" [readonly]="!editMode.gender">
+                    <button class="editar" (click)="enableEdit('gender')">Editar </button>
+                </div>
+            </div>
+            
+            <div class="columna">
+                <label>Edad:</label>
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="client.age" [readonly]="!editMode.age">
+                    <button class="editar" (click)="enableEdit('age')">Editar</button>
+                </div>
+
+                <label>Número de teléfono:</label>
+                <div class="input-group">
+                    <input type="tel" [(ngModel)]="client.phone" [readonly]="!editMode.phone">
+                    <button class="editar" (click)="enableEdit('phone')">Editar</button>
+                </div>
+
+                <label>DNI:</label>
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="client.dni" [readonly]="!editMode.dni">
+                    <button class="editar" (click)="enableEdit('dni')">Editar</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="perfil guardar-cambios" (click)="saveChanges()">Guardar cambios</button>
+    </div>
+</div>

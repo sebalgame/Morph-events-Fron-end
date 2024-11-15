@@ -1,0 +1,139 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 43px;
+    background-color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; 
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 40.5%;
+    margin-top: 20px;
+}
+
+.Logo-header {
+    width: 290px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.icon-flecha{
+    position: absolute;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+
+.titulo-gustos {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.titulo-gustos h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 80px;
+    color:rgba(36, 37, 101, 1);
+    
+}
+
+
+.categorias-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.categoria {
+    text-align: center;
+}
+
+.categoria h2 {
+    font-size: 2.1rem;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+
+.categoria-boton {
+    display: block;
+    width: 300px;
+    padding: 15px;
+    margin: 25px 0;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #f370bc;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.categoria-boton:hover {
+    background-color: #d34999;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+
+.guardar {
+    width: 300px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.guardar:hover {
+    background-color: #a31653; 
+}
+
+.categoria-boton.activo {
+    background-color: #a31653; 
+}
+
+.guardar {
+    width: 300px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
+}
+
+.guardar:hover {
+    background-color: #a31653; 
+}
+

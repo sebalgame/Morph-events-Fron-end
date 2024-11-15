@@ -1,0 +1,64 @@
+<div class="header">
+    <div class="logo">
+    
+        <a><img src="Images/LOGO.png" class="Logo-header"></a>
+        <p class="oracionH">¡Te damos la bienvenida!</p>
+
+    </div>
+
+    <div class="icons">
+
+        <img src="Images/icon-usuario.png" class="icon-usuario" alt="Usuario">
+        <img src="Images/icon-hamburguesa.png" class="icon-hamburguesa" (click)="toggleMenu()" alt="Menú">
+    
+    </div>
+
+</div>
+
+<div *ngIf="menuOpen" class="hamburger-menu">
+    <p [routerLink]="['/cuenta/ver-perfil']" (click)="selectOption('Ver Perfil')">Ver Perfil</p>
+    <p [routerLink]="['/cuenta/actualizar-datos']" (click)="selectOption('Actualizar Datos')">Actualizar Datos</p>
+    <p (click)="selectOption('Eventos Favoritos')">Eventos Favoritos</p>
+    <p (click)="selectOption('Comentar')" routerLink="/cuenta/comentarios">Comentar</p>
+    <p (click)="selectOption('Transacciones')" routerLink="/cuenta/transacciones">Transacciones</p>
+    <p (click)="selectOption('Entradas Compradas')" routerLink="/cuenta/entradas-compradas">Entradas Compradas</p>
+</div>
+
+    <div class="seccion1">
+
+        <div class="imagens1"><img src="Images/seccion1.png"></div>
+        <div class="text">
+            <h2>Ingresa tus datos personales</h2>
+            <p>Los datos adjuntados podrán ser utilizados para la creación de un perfil más detallado</p>
+            <button class="ingresar" [routerLink]="['/cuenta/usuario']">Ingresar</button>
+        </div>
+
+    </div>
+
+    <div class="seccion2">
+
+        <div class="imagens2"><img src="Images/seccion2.png"></div>
+        <div class="text">
+            <h2>Ingresa tus gustos y preferencias</h2>
+            <p>Los datos adjuntados podrán ser utilizados para mostrar fiestas o reuniones relacionadas a su gusto personal</p>
+            <button class="ingresar" [routerLink]="['/cuenta/gustos-preferencias']">Ingresar</button>
+        </div>
+
+    </div>
+
+    <div class="seccion3">
+
+        <div class="imagens3"><img src="Images/seccion3.png"></div>
+        <div class="text">
+            <h2>Eventos</h2>
+            <p>Podrás visualizar las fiestas o reuniones acorde a sus gustos</p>
+            <button class="ingresar" [routerLink]="['/cuenta/eventos']">Ingresar</button>
+        </div>
+
+    </div>
+
+<div class="button-container">
+    <button class="logout">Cerrar Sesión</button>
+</div>
+
+

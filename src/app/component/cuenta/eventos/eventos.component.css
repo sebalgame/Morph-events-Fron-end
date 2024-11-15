@@ -1,0 +1,262 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 43px;
+    background-color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 41%;
+    margin-top: 20px;
+}
+
+.Logo-header {
+    width: 290px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.icon-flecha{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+
+.icon-hamburguesa{
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+
+}
+
+.hamburger-menu {
+    background-color: #1a1e36;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    right: 20px;
+    top: 48px;
+    z-index: 1001;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.hamburger-menu p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+}
+  
+.hamburger-menu p:hover {
+    background-color: #454d75;
+}
+
+.events {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f8f8f8; 
+}
+
+.titulo-events {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.titulo-events h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 82px;
+    color:rgba(36, 37, 101, 1)
+}
+
+.eventos1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.event1, .event2, .event3 {
+    background-color: white;
+    width: 395px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position:relative;
+}
+
+.fecha h5{
+    color: #3D37F1;
+    font-size: 26px;
+    margin-bottom:20px;
+    font-weight:400;
+    margin-top:40px;
+}
+
+.fecha h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+.event1 img, .event2 img, .event3 img{
+    width: 395px;
+    height: 200px;
+    border-radius: 10px;    
+}
+
+.arreglo {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 20px; 
+}
+
+.fecha {
+    text-align: center;
+    min-width: 65px;
+}
+
+.texto {
+    flex: 1;
+    text-align: left;
+    line-height: 30px;
+}
+
+.texto h5 {
+    font-size: 1.22rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.texto p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 40px;
+    
+}
+
+.veRmas {
+    width: 300px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.veRmas:hover {
+    background-color: #a31653; 
+}
+
+.star1 {
+    position: absolute;
+    top: 254px;
+    left: 670px;
+    
+}
+
+.star2 {
+    position: absolute;
+    top: 252px;
+    left: 1100px;
+    
+}
+
+.star3 {
+    position: absolute;
+    top: 254px;
+    left: 1580px;
+    
+}
+
+.icon-estrella {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    margin: 10px 0 100px 0;
+    gap: 15px;
+}
+
+.filter {
+    position: relative;
+    bottom:1125px;
+    left:810px; 
+}
+
+.dropdown-toggle {
+    background-color: rgb(186, 191, 226);
+    border: none;
+    padding: 10px 40px 10px 40px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    color:#242b53;
+    
+}
+
+.dropdown-menu {
+    background-color: #1a1e36;
+    position: absolute;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.dropdown-menu p {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.dropdown-menu p:hover {
+    background-color: #454d75;
+}
+

@@ -1,0 +1,224 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0 43px;
+    background-color: #fff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 41%;
+    margin-top: 20px;
+}
+
+.Logo-header {
+    width: 290px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.icon-flecha{
+    position: absolute;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+
+
+.favEvents {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f8f8f8; 
+}
+
+.titulo-favEvents {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.titulo-favEvents h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 80px;
+    color:rgba(36, 37, 101, 1)
+}
+
+.favEventos1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.favEvent1, .favEvent2, .favEvent3 {
+    background-color: white;
+    width: 395px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position:relative;
+}
+
+.fecha h5{
+    color: #3D37F1;
+    font-size: 26px;
+    margin-bottom:20px;
+    font-weight:400;
+    margin-top:40px;
+}
+
+.fecha h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.favEvent1 img, .favEvent2 img, .favEvent3 img{
+    width: 395px;
+    height: 200px;
+    border-radius: 10px;    
+}
+
+.arreglo {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 20px; 
+}
+
+.fecha {
+    text-align: center;
+    min-width: 60px;
+}
+
+.texto {
+    flex: 1;
+    text-align: left;
+    line-height: 30px;
+}
+
+.texto h5 {
+    font-size: 1.24rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    margin-top:30px;
+}
+
+.texto p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.button-container {
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+    margin-top: 40px;
+    margin-right: 60px;
+    
+}
+
+.eliminar {
+    width: 300px;
+    height: 60px;
+    background: #F5167E;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.eliminar:hover {
+    background-color: #a31653; 
+}
+
+
+.block1 {
+    position: absolute;
+    top: 256px;
+    left: 465px;
+    
+}
+
+.block2 {
+    position: absolute;
+    top: 256px;
+    left: 930px;
+    
+}
+
+.block3 {
+    position: absolute;
+    top: 256px;
+    left: 1400px;
+    
+}
+
+.filters {
+    display: flex;
+    margin: 10px 0 100px 0;
+    gap: 15px;
+}
+
+.filter {
+    position: relative;
+    bottom:1145px;
+    left:810px; 
+}
+
+.dropdown-toggle {
+    background-color: rgb(186, 191, 226);
+    border: none;
+    padding: 10px 40px 10px 40px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    color:#242b53;
+    
+}
+
+.dropdown-menu {
+    background-color: #1a1e36;
+    position: absolute;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.dropdown-menu p {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.dropdown-menu p:hover {
+    background-color: #454d75;
+}
+

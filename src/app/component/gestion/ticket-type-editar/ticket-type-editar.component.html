@@ -1,0 +1,68 @@
+<app-menu-admin></app-menu-admin>
+
+<div class="title-container">
+  <h5>Editar Tipo de Ticket</h5>
+  <hr />
+</div>
+
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="actualizar()" class="form-grid">
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre del Ticket</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="form.get('name')?.hasError('required')">
+          El nombre es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="form.get('name')?.hasError('minlength')">
+          El nombre debe tener al menos 3 caracteres.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Precio</mat-label>
+        <input matInput formControlName="price" type="number" />
+        <mat-error *ngIf="form.get('price')?.hasError('required')">
+          El precio es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="form.get('price')?.hasError('min')">
+          El precio debe ser mayor a 0.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Cantidad Disponible</mat-label>
+        <input matInput formControlName="availableQuantity" type="number" />
+        <mat-error *ngIf="form.get('availableQuantity')?.hasError('required')">
+          La cantidad disponible es obligatoria.
+        </mat-error>
+        <mat-error *ngIf="form.get('availableQuantity')?.hasError('min')">
+          La cantidad debe ser mayor o igual a 1.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Evento</mat-label>
+        <mat-select formControlName="event">
+          <mat-option *ngFor="let event of eventos" [value]="event.id">
+            {{ event.accessCode }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('event')?.hasError('required')">
+          Seleccione un evento.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="buttons-container">
+      <button mat-raised-button color="primary" [disabled]="!form.valid">Actualizar</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

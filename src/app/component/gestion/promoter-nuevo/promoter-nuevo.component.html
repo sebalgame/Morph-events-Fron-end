@@ -1,0 +1,28 @@
+<app-menu-admin></app-menu-admin>
+
+<div class="title-container">
+  <h5>Nuevo Promotor</h5>
+  <hr />
+</div>
+
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="grabar()" class="form-grid">
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Detalles del Promotor</mat-label>
+        <input matInput formControlName="details" />
+        <mat-error *ngIf="form.get('details')?.hasError('required')">
+          Los detalles son obligatorios.
+        </mat-error>
+        <mat-error *ngIf="form.get('details')?.hasError('minlength')">
+          Los detalles deben tener al menos 3 caracteres.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="buttons-container">
+      <button mat-raised-button color="primary" [disabled]="!form.valid">Grabar</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

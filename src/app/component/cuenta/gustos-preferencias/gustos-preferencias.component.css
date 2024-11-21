@@ -1,139 +1,220 @@
+/* Encabezado */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 0 43px;
-    background-color: #fff;
-    position: fixed; 
+    padding: 35px 0; 
+    background: linear-gradient(90deg, #f5167e, #ee49a9, #9b0848);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100; 
+    z-index: 1000;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s cubic-bezier(0.25, 1, 0.5, 1);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2); 
 }
 
-.logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
     position: absolute;
-    left: 40.5%;
-    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .Logo-header {
-    width: 290px;
+    width: 250px;
+    transition: transform 0.4s ease, filter 0.4s ease, rotate 0.4s ease;
+    filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.4));
+}
+
+.Logo-header:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: brightness(1.3);
 }
 
 .icons {
     display: flex;
     align-items: center;
-    margin-top: 15px;
-}
-
-.icon-flecha{
     position: absolute;
     left: 20px;
-    width: 50px;
-    height: 50px;
-    cursor:pointer;
 }
 
+.icon-flecha {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+
 .titulo-gustos {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 100px;
+    text-align: left;
+    margin-top: 130px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .titulo-gustos h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-align: left;
-    margin-left: 80px;
-    color:rgba(36, 37, 101, 1);
-    
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(to right, #f5167e, #ee49a9, #f8bc22); 
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
 .categorias-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 100px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .categoria {
     text-align: center;
+    padding: 0 20px;
+    position: relative;
 }
 
-.categoria h2 {
-    font-size: 2.1rem;
-    font-weight: 550;
-    margin-bottom: 20px;
+.categoria:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -20px;
+    height: 80%;
+    width: 3px;
+    border-right: 3px dotted rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.categoria:hover:not(:last-child)::after {
+    border-color: rgba(245, 22, 126, 0.7);
+    transform: scaleY(1.5);
 }
 
 .categoria-boton {
     display: block;
-    width: 300px;
+    width: 280px;
     padding: 15px;
-    margin: 25px 0;
-    font-size: 1.2rem;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
-    background: #f370bc;
+    background: linear-gradient(to right, #f5167e, #ee49a9);
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
 }
 
 .categoria-boton:hover {
-    background-color: #d34999;
+    transform: translateY(-8px) rotate(3deg);
+    box-shadow: 0px 15px 25px rgba(245, 22, 126, 0.5);
+    background: linear-gradient(to right, #f8bc22, #f5167e);
+}
+
+.categoria-boton.activo {
+    background: linear-gradient(to right, #f8bc22, #f5167e);
+    transform: scale(1.1);
+    box-shadow: 0px 12px 20px rgba(163, 22, 83, 0.6);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    padding: 10px;
-    margin-top: 20px;
-    
+    padding: 30px;
+    margin-top: 40px;
 }
 
 .guardar {
-    width: 300px;
-    height: 60px;
-    background: #F5167E;
-    border-radius: 30px;
-    font-size: 20px;
+    width: 350px;
+    height: 75px;
+    background: linear-gradient(to right, #cf9cb4, #f8bc22);
+    border-radius: 40px;
+    font-size: 24px;
+    font-weight: bold;
     color: white;
     cursor: pointer;
     border: none;
     outline: none;
-    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .guardar:hover {
-    background-color: #a31653; 
+    transform: translateY(-8px) scale(1.1) rotate(2deg);
+    box-shadow: 0px 25px 40px rgba(245, 22, 126, 0.5);
+    background: linear-gradient(to right, #cab788, #bb8ca2);
 }
 
-.categoria-boton.activo {
-    background-color: #a31653; 
-}
 
-.guardar {
-    width: 300px;
-    height: 60px;
-    background: #F5167E;
-    border-radius: 30px;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.1);
-}
+@media (max-width: 768px) {
+    .categorias-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
 
-.guardar:hover {
-    background-color: #a31653; 
-}
+    .categoria-boton {
+        width: 100%;
+    }
 
+    .titulo-gustos h1 {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+}

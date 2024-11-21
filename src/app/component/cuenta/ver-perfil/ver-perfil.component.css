@@ -1,28 +1,58 @@
+/* Encabezado */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 35px 0 43px;
-    background-color: #fff;
+    background: linear-gradient(to right, #f5167e, #ee49a9);
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000; 
-    
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease;
 }
 
-.logo{
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    left: 41%;
-    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px; 
+    animation: logoPulse 3s infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
 }
 
 .Logo-header {
     width: 290px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.Logo-header:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.7));
 }
 
 .icons {
@@ -31,59 +61,107 @@
     margin-top: 15px;
 }
 
-.icon-flecha{
+.icon-flecha {
     position: absolute;
     left: 20px;
     width: 50px;
     height: 50px;
-    cursor:pointer;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.icon-hamburguesa{
+.icon-flecha:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 10px 20px rgba(245, 22, 126, 0.7);
+}
+
+.icon-hamburguesa {
     position: absolute;
     right: 20px;
     width: 40px;
     height: 40px;
-    cursor:pointer;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
+.icon-hamburguesa:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 10px 20px rgba(245, 22, 126, 0.7);
 }
 
 .hamburger-menu {
-    background-color: #1a1e36;
-    padding: 10px;
+    background: linear-gradient(to bottom, #1a1e36, #454d75);
+    padding: 15px;
     border-radius: 10px;
     position: fixed;
     right: 20px;
-    top: 48px;
+    top: 70px;
     z-index: 1001;
-    width: 200px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeInMenu 0.5s ease-in-out;
 }
-  
+
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hamburger-menu p {
-    padding: 10px;
+    padding: 12px;
     margin: 0;
     cursor: pointer;
     color: #ffffff;
     font-size: 16px;
-}
-  
-.hamburger-menu p:hover {
-    background-color: #454d75;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+.hamburger-menu p:hover {
+    background-color: #6c7bc7;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fef3f5, #f8e1f0);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    animation: floatUp 1s ease-in-out;
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .caja-izquierda {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .foto {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .imagen-referencia {
@@ -91,52 +169,63 @@
     height: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.perfil {
-    background-color: #F5167E;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px;
+.imagen-referencia:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 15px 30px rgba(245, 22, 126, 0.5);
 }
 
-.perfil:hover {
-    background-color: #a31653;
+.nombre-apellido {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #242565;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .biografia {
-    width: 80%;
+    width: 90%;
     margin-top: 20px;
+    animation: fadeInText 1.5s ease-in-out;
 }
 
 .biografia h5 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 10px;
 }
 
 .biografia-recuadro {
-    width: 98%;
-    height: 100px;
+    width: 100%;
+    height: 120px;
     padding: 10px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #ddd;
     resize: none;
     color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.biografia-recuadro:hover {
+    box-shadow: inset 0px 10px 20px rgba(245, 22, 126, 0.5);
 }
 
 .preferencias {
-    width: 80%;
+    width: 90%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .preferencias h5 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #242565;
     margin-bottom: 10px;
 }
 
@@ -147,21 +236,18 @@
 }
 
 .preferencias li {
-    font-size: 1.2rem;
-    background: #d34999;
+    font-size: 1.3rem;
+    background: linear-gradient(to right, #d34999, #f5167e);
     color: #fff;
     margin: 5px 0;
     padding: 10px;
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.nombre-apellido {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 20px;
-    text-align: center;
-  }
+.preferencias li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(245, 22, 126, 0.5);
+}

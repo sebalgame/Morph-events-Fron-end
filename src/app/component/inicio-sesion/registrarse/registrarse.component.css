@@ -1,0 +1,145 @@
+/* General container */
+.login-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 120vh; /* Hace que ocupe toda la altura de la ventana */
+  background: url('../../../../../public/Images/fondo-login.png') no-repeat center center;
+  background-size: cover; /* Hace que la imagen cubra toda el área */
+  padding: 0; /* Elimina el padding para asegurar que la imagen cubra toda la pantalla */
+  margin: 0; /* Elimina márgenes */
+}
+
+/* Styling for the form box */
+.login-box {
+  position: absolute;
+  left: 200px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 40px 100px;
+  max-width: 400px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Title for the form */
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 2px solid #dcdcdc;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Forgot password link */
+.forgot-password {
+  color: #ff4081;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Buttons for register */
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background-color: #f5167e;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.login-btn:hover {
+  background: linear-gradient(to right, #f8bc22 0%, #f5167e 100%);
+  transform: scale(1.05);
+}
+
+/* Morph Events Logo Section */
+.morph-events-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.morph-logo {
+  position: absolute;
+  right: 10px;
+  width: 800px;
+  max-width: 100%;
+  animation: slide-in 1s ease-in-out;
+}
+
+.styled-select {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: none;
+border-bottom: 2px solid #dcdcdc;
+background-color: #f9f9f9;
+font-size: 16px;
+color: #333;
+outline: none;
+transition: all 0.3s ease;
+appearance: none;
+border-radius: 5px;
+background-repeat: no-repeat;
+background-position: right 10px center;
+background-size: 12px;
+}
+
+.styled-select:hover {
+border-bottom-color: #f5167e;
+}
+
+.styled-select:focus {
+border-bottom-color: #f8bc22;
+}
+
+.styled-select::-ms-expand {
+display: none;
+}
+
+.styled-select option {
+padding: 10px;
+}
+
+/* Animation for Morph Events logo */
+@keyframes slide-in {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+small {
+  display: block;
+  margin-bottom: 5px;
+}

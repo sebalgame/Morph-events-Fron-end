@@ -1,0 +1,56 @@
+<app-menu-admin></app-menu-admin>
+<h5>Lista de Tipos de Evento</h5>
+<hr />
+
+<div class="actions">
+  <button mat-raised-button color="primary" routerLink="/tipoevento/nuevo">
+    <mat-icon>add</mat-icon> Nuevo
+  </button>
+</div>
+<br>
+
+<mat-form-field>
+  <mat-label>Filtro de datos</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Escriba un filtro" />
+</mat-form-field>
+<br>
+
+<table mat-table [dataSource]="tipoEventos" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="eventName">
+    <th mat-header-cell *matHeaderCellDef> Nombre del Evento </th>
+    <td mat-cell *matCellDef="let element"> {{ element.eventName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="theme">
+    <th mat-header-cell *matHeaderCellDef> Tema </th>
+    <td mat-cell *matCellDef="let element"> {{ element.theme }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+    <td mat-cell *matCellDef="let element"> {{ element.description }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="accent" (click)="editarTipoEvento(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="eliminarTipoEvento(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons (page)="cargarTipoEventos()"></mat-paginator>

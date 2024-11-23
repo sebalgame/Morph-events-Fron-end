@@ -1,0 +1,60 @@
+<app-menu-admin></app-menu-admin>
+<h5>Lista de Tipos de Tickets</h5>
+<hr />
+
+<div class="actions">
+  <button mat-raised-button color="primary" (click)="nuevo()">
+    <mat-icon>add</mat-icon> Nuevo
+  </button>
+</div>
+<br />
+
+<mat-form-field>
+  <mat-label>Filtro de datos</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Escriba un filtro" />
+</mat-form-field>
+<br />
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="availableQuantity">
+    <th mat-header-cell *matHeaderCellDef> Cantidad Disponible </th>
+    <td mat-cell *matCellDef="let element">{{ element.availableQuantity }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="event">
+    <th mat-header-cell *matHeaderCellDef> Codigo Evento </th>
+    <td mat-cell *matCellDef="let element"> {{ element.event?.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editar(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="eliminar(element.id)">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
